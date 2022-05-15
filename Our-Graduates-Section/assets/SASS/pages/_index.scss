@@ -1,0 +1,143 @@
+.title {
+    font-size: 50px;
+    margin: 0 auto;
+    .thetext {
+      font-weight: 100%;
+    }
+  }
+  .body {
+    font-family: $font;
+  }
+  .thetext {
+    margin-bottom: -20px;
+    text-align: center;
+  }
+  .verticalLine {
+    width: 130px;
+    height: 5px;
+    background-color: $color;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  
+  .photos {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .photos-item {
+    background-color: $color;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    transition: transform 1s;
+  
+    &:hover {
+      display: block;
+      transform: rotateY(180deg);
+    }
+    .theimage {
+      width: calc(100%);
+      height: calc(100%);
+      cursor: pointer;
+    }
+  }
+  .green {
+    @include ImgCover;
+    background-color: $color-opacity-green;
+  }
+  .purple {
+    @include ImgCover;
+    background-color: $color-opacity-purple;
+  }
+  .yellow {
+    @include ImgCover;
+    background-color: $color-opacity-yellow;
+  }
+  .red{
+    @include ImgCover;
+    background-color: $color-opacity-red;
+  }
+  .behind-image {
+    width: calc(100%);
+    height: calc(100%);
+    position: relative;
+    top: -150px;
+    color: white;
+    display: none;
+  }
+
+  .photos-item {
+      &:hover{
+          .behind-image {
+          display: block;
+          cursor: pointer;
+         } 
+      }  
+  }
+  .icon{
+    position: absolute;
+    left: 130px;
+    top: 105px;
+  }
+ 
+  
+  .behind-image-item {
+    font-size: 17px;
+    margin-bottom: 2px;
+    position: relative;
+    left: -12px;
+    top: 10px;
+    text-align: start;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  .name {
+    font-size: 20px;
+  }
+  @media only screen and( min-width:1200px) and (max-width: 13400px) {
+    
+    .photos-item{
+       
+        width: calc(100%*0.12);
+        .icon{
+       
+          left: 130px;
+
+        }
+    }
+  }
+  @media only screen and( min-width:990px) and (max-width: 1077px) {
+      .photos-item{
+          
+          width: calc(100%/6);
+      }
+      .icon{
+       
+        left: 135px;
+      }
+  }
+  @media only screen and( min-width:770px) and (max-width: 990px) {
+      .photos-item{
+          
+          width: calc(100%/4);     
+      }
+      .icon{
+       
+        left: 145px;
+      }
+  }
+  @media only screen and( min-width:250px) and (max-width: 770px) {
+      .photos-item{
+          
+          width: calc(100%/3);   
+      }
+      .icon{
+       
+        left: 150px;
+      }
+  }
+  
